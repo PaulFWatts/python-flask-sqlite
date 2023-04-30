@@ -21,7 +21,7 @@ def enternew():
     return render_template("student.html")
 
 # Route to add a new record (INSERT) student data to the database
-@app.route("/addrec", methods = ['POST', 'GET'])
+@app.route("/addrec", methods = ['POST', 'GET']) # type: ignore
 def addrec():
     # Data will be available from POST submitted by the form
     if request.method == 'POST':
@@ -64,7 +64,7 @@ def list():
     return render_template("list.html",rows=rows)
 
 # Route that will SELECT a specific row in the database then load an Edit form 
-@app.route("/edit", methods=['POST','GET'])
+@app.route("/edit", methods=['POST','GET']) # type: ignore
 def edit():
     if request.method == 'POST':
         try:
@@ -86,7 +86,7 @@ def edit():
             return render_template("edit.html",rows=rows)
 
 # Route used to execute the UPDATE statement on a specific record in the database
-@app.route("/editrec", methods=['POST','GET'])
+@app.route("/editrec", methods=['POST','GET']) # type: ignore
 def editrec():
     # Data will be available from POST submitted by the form
     if request.method == 'POST':
@@ -115,7 +115,7 @@ def editrec():
             return render_template('result.html',msg=msg)
 
 # Route used to DELETE a specific record in the database    
-@app.route("/delete", methods=['POST','GET'])
+@app.route("/delete", methods=['POST','GET']) # type: ignore
 def delete():
     if request.method == 'POST':
         try:
